@@ -1,16 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>alpine-js-portfolio</title>
+    <title>alpine-js-examples</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
 </head>
 <body>
-    <h1>alpine-js-portfolio</h1>
+    <h1>alpine-js-examples</h1>
     <p> <br> </p>
     <h3>
         Bodryakov Alexey
     </h3>
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-items"><a href="#">Пункт-01</a></li>
+            <li class="nav-items"><a href="#">Пункт-02</a></li>
+            <li class="nav-items"><a href="#">Пункт-03</a></li>
+            <li class="nav-items"><a href="#">Пункт-04</a></li>
+            <li class="nav-items"><a href="#">Пункт-05</a></li>
+            <li class="nav-items"><a href="#">Пункт-06</a></li>
+            <li class="nav-items"><a href="#">Пункт-07</a></li>
+            <li class="nav-items"><a href="#">Пункт-08</a></li>
+            <li class="nav-items"><a href="#">Пункт-09</a></li>
+            <li class="nav-items"><a href="#">Пункт-10</a></li>
+            <li class="nav-items"><a href="#">Пункт-11</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="content-section section-start">
+            <h3 class="content-section__header">
+                Начало
+            </h3>
+            <article class="content-section__content">
+                <h2 x-data="{ message: 'Я ❤️ Alpine' }" x-text="message"></h1>
+            </article>
+        </section>
+
+    </main>
+
+
+
+
 </body>
 </html>
