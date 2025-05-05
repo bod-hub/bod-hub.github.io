@@ -5,14 +5,45 @@
 }
 
 html, body {
-    min-height: 100vh;
-    display: grid;
-    align-content: start;
-    justify-content: center;
+  outline: 5px dotted red;
+  max-width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  align-content: start;
+  justify-content: center;
 }
 
-h1, h3 {
-    color: blue;
-    text-align: center;
-    margin-top: 10%;
+.left-nav {
+  outline: 2px solid blue;
+  min-height: 100vh;
 }
+
+.nav-list {
+}
+
+.nav-items {
+}
+
+.page {
+  outline: 2px solid green;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.page-header {
+  outline: 2px solid brown;
+}
+
+.page-title, .page-subtitle {
+  color: blue;
+  text-align: center;
+  margin-top: 10%;
+}
+
+
+.page-footer {
+  outline: 2px solid gold;
+}
+
