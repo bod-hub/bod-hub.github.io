@@ -10,42 +10,42 @@
 
 <body>
 
-
+  <!-- left-nav - Левое меню-->
   <div class="left-nav">
     <nav>
       <ul class="nav-list">
         <li class="nav-items">
-          <a href="#">Пункт-01</a>
+          <a href="#sect-1">Пункт-01</a>
         </li>
         <li class="nav-items">
-          <a href="#">Пункт-02</a>
+          <a href="#sect-2">Пункт-02</a>
         </li>
         <li class="nav-items">
-          <a href="#">Пункт-03</a>
+          <a href="#sect-3">Пункт-03</a>
         </li>
         <li class="nav-items">
-          <a href="#">Пункт-04</a>
+          <a href="#sect-4">Пункт-04</a>
         </li>
         <li class="nav-items">
-          <a href="#">Пункт-05</a>
+          <a href="#sect-5">Пункт-05</a>
         </li>
         <li class="nav-items">
-          <a href="#">Пункт-06</a>
+          <a href="#sect-6">Пункт-06</a>
         </li>
         <li class="nav-items">
-          <a href="#">Пункт-07</a>
+          <a href="#sect-7">Пункт-07</a>
         </li>
         <li class="nav-items">
-          <a href="#">Пункт-08</a>
+          <a href="#sect-8">Пункт-08</a>
         </li>
         <li class="nav-items">
-          <a href="#">Пункт-09</a>
+          <a href="#sect-9">Пункт-09</a>
         </li>
         <li class="nav-items">
-          <a href="#">Пункт-10</a>
+          <a href="#sect-10">Пункт-10</a>
         </li>
         <li class="nav-items">
-          <a href="#">Пункт-11</a>
+          <a href="#sect-11">Пункт-11</a>
         </li>
       </ul>
     </nav>
@@ -53,31 +53,95 @@
   </div>
 
 
+  <!-- page - Остальная страница (без левого меню) -->
   <div class="page">
     <header class="page-header">
       <h1 class="page-title">alpine-js-examples</h1>
-      <p> <br> </p>
       <h3 class="page-subtitle">
           Author: Bodryakov Alexey
       </h3>
     </header>
 
-    <main>
-        <section class="content-section section-start">
-            <h3 class="content-section__header">
-                Начало
-            </h3>
-            <article class="content-section__content">
-                <h2 x-data="{ message: 'Я ❤️ Alpine' }" x-text="message"></h1>
-            </article>
-        </section>
+    <main class="page-main">
+
+      <!-- Секция 1 -->
+      <section class="content-section section-start">
+        <h3 class="content-section__header">
+            Начало
+        </h3>
+        <article class="content-section__content">
+          <h2 x-data="{ message: 'Я ❤️ Alpine' }" x-text="message"></h1>
+        </article>
+      </section>
+
+      <!-- Секция 2 -->
+      <section class="content-section section-2" id="sect-2">
+        <h3 class="content-section__header">
+            Заголовок 2
+        </h3>
+        <article class="content-section__content">
+          <p>
+            Содержание 2
+          </p>
+        </article>
+      </section>
+
+      <!-- Секция 2 -->
+      <section class="content-section section-3" id="sect-3">
+        <h3 class="content-section__header">
+            Заголовок 23
+        </h3>
+        <article class="content-section__content">
+          <p>
+            Содержание 3
+          </p>
+        </article>
+      </section>
+
+      <!-- Секция 4 -->
+      <section class="content-section section-4" id="sect-4">
+        <h3 class="content-section__header">
+            Заголовок 4
+        </h3>
+        <article class="content-section__content">
+          <p>
+            Содержание 4
+          </p>
+        </article>
+      </section>
+
+      <!-- Секция 5 -->
+      <section class="content-section section-5" id="sect-5">
+        <h3 class="content-section__header">
+            Заголовок 5
+        </h3>
+        <article class="content-section__content">
+          <p>
+            Содержание 5
+          </p>
+        </article>
+      </section>
+
+      <!-- Секция 6 -->
+      <section class="content-section section-6" id="sect-6">
+        <h3 class="content-section__header">
+            Заголовок 6
+        </h3>
+        <article class="content-section__content">
+          <p>
+            Содержание 6
+          </p>
+        </article>
+      </section>
 
     </main>
+
 
     <footer class="page-footer">
       <p>
         Футер
       </p>
+      <a href="_typography.html">_typography.html</a>
     </footer>
 
 
