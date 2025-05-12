@@ -10,42 +10,131 @@
 
 <body>
 
-  <!-- left-nav - Левое меню-->
-  <div class="left-nav">
+  <!-- Реализация раскрывающегося меню через :has  -->
+  <div class="menu-container">
+    <button class="menu-toggle" onclick="this.classList.toggle('open')">☰</button>
     <nav>
       <ul class="nav-list">
-        <li class="nav-items">
+        <li class="nav-item">
           <a href="#sect-1">Пункт-01</a>
         </li>
-        <li class="nav-items">
+        <li class="nav-item">
           <a href="#sect-2">Пункт-02</a>
         </li>
-        <li class="nav-items">
+        <li class="nav-item">
           <a href="#sect-3">Пункт-03</a>
         </li>
-        <li class="nav-items">
+        <li class="nav-item">
           <a href="#sect-4">Пункт-04</a>
         </li>
-        <li class="nav-items">
+        <li class="nav-item">
           <a href="#sect-5">Пункт-05</a>
         </li>
-        <li class="nav-items">
+        <li class="nav-item">
           <a href="#sect-6">Пункт-06</a>
         </li>
-        <li class="nav-items">
+        <li class="nav-item">
           <a href="#sect-7">Пункт-07</a>
         </li>
-        <li class="nav-items">
+        <li class="nav-item">
           <a href="#sect-8">Пункт-08</a>
         </li>
-        <li class="nav-items">
+        <li class="nav-item">
           <a href="#sect-9">Пункт-09</a>
         </li>
-        <li class="nav-items">
+        <li class="nav-item">
           <a href="#sect-10">Пункт-10</a>
         </li>
-        <li class="nav-items">
-          <a href="#sect-11">Пункт-11</a>
+        <li class="nav-item">
+          <a href="#footer">Пункт-11</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <!-- Реализация раскрывающегося меню через <details>  -->
+  <!-- <details class="mobile-menu">
+    <summary>☰ Меню</summary>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#sect-1">Пункт-01</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-2">Пункт-02</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-3">Пункт-03</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-4">Пункт-04</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-5">Пункт-05</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-6">Пункт-06</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-7">Пункт-07</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-8">Пункт-08</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-9">Пункт-09</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-10">Пункт-10</a>
+        </li>
+        <li class="nav-item">
+          <a href="#footer">Пункт-11</a>
+        </li>
+      </ul>
+    </nav>
+  </details> -->
+
+
+  <!-- left-nav - Левое меню для Desktop -->
+  <div class="left-nav">
+    <div class="left-nav__logo">
+      <img src="images/alpine-logo.svg" alt="alpine-logo">
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#sect-1">Пункт-01</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-2">Пункт-02</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-3">Пункт-03</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-4">Пункт-04</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-5">Пункт-05</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-6">Пункт-06</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-7">Пункт-07</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-8">Пункт-08</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-9">Пункт-09</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-10">Пункт-10</a>
+        </li>
+        <li class="nav-item">
+          <a href="#footer">Пункт-11</a>
         </li>
       </ul>
     </nav>
@@ -138,7 +227,7 @@
 
 
     <footer class="page-footer">
-      <p>
+      <p id="footer">
         Футер
       </p>
       <a href="_typography.html">_typography.html</a>

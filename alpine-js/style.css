@@ -35,6 +35,7 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 html, body {
@@ -48,9 +49,9 @@ body {
   /* background-color: yellow; */
   font-family: Roboto;
   line-height: 1.4;
-  padding: calc(var(--i) * 0.5);
+  /* padding: calc(var(--i) * 1); */
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 30% 70%;
   grid-gap: calc(var(--i) * 0.5);
   align-content: start;
   justify-content: center;
@@ -74,18 +75,70 @@ p {
 
 
 
+.mobile-menu {
+  display: none;
+}
+
+.menu-container {
+  display: none;
+}
+
+
+
+
 /* Левое меню навигации */
 
 .left-nav {
-  outline: 2px solid blue;
+  /* outline: 2px solid blue; */
   min-height: 100vh;
-  padding: calc(var(--i) * 0.3);
+  padding: calc(var(--i) * 0.5);
+  padding-left: calc(var(--i) * 1);
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+  url(images/menu-bg.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.left-nav__logo {
+  /* outline: 2px solid red; */
+  height: calc(var(--i) * 9);
+  /* padding: calc(var(--i) * 1); */
+}
+
+.left-nav__logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transform: translateY(calc(var(--i) * -4));
 }
 
 .nav-list {
+  /* outline: 2px solid red; */
+  display: grid;
+  list-style-type: none;
+  padding: calc(var(--i) * 0.5);
 }
 
-.nav-items {
+.nav-item {
+  /* outline: 2px solid blue; */
+  margin-top: calc(var(--i) * 0.5);
+  margin-bottom: calc(var(--i) * 0.5);
+  padding: calc(var(--i) * 0.2);
+  border-bottom: 2px solid #000077;
+  cursor: pointer;
+  &:hover {
+    border-bottom: 2px solid #0000ff;
+  }
+}
+
+.nav-item a {
+  color: #000077;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  &:hover {
+    color: #0000ff;
+  }
 }
 
 
@@ -93,9 +146,9 @@ p {
 /* Остальная страница (без левого меню) */
 
 .page {
-  outline: 2px solid green;
+  /* outline: 2px solid green; */
   min-height: 100vh;
-  padding: calc(var(--i) * 0.3);
+  padding: calc(var(--i) * 0.5);
   display: grid;
   align-content: start;
   justify-content:stretch;
@@ -108,19 +161,17 @@ p {
 
 /* Хэдер */
 .page-header {
-  outline: 2px solid brown;
+  /* outline: 2px solid brown; */
   padding: calc(var(--i) * 0.3);
   display: grid;
   align-content: start;
   justify-content: stretch;
-
-  /* grid-gap: calc(var(--i) * 5);   Не работает */
 }
 
 
 
 .page-title, .page-subtitle {
-  outline: 2px dashed black;
+  /* outline: 2px dashed black; */
   color:#000077;
   text-align: center;
   margin-bottom: calc(var(--i) * 0.5);
@@ -130,7 +181,7 @@ p {
 
 /* Мэйн */
 .page-main {
-  outline: 2px solid magenta;
+  /* outline: 2px solid magenta; */
   padding: calc(var(--i) * 0.3);
   min-height: 100vh;
   display: grid;
@@ -140,7 +191,7 @@ p {
 }
 
 .content-section {
-  outline: 2px dotted black;
+  /* outline: 2px dotted black; */
   padding: calc(var(--i) * 0.3);
 
 }
@@ -154,7 +205,7 @@ p {
 }
 
 .page-footer {
-  outline: 2px solid gold;
+  /* outline: 2px solid gold; */
   padding: calc(var(--i) * 0.3);
 }
 
@@ -195,7 +246,8 @@ p {
 }
 
 
-/* Для Смартфонов от 360x640 вертикально: */
+/* Для Смартфонов 360x640 вертикально и горизонтально
+    или от 361 до 640 вертикально: */
 
 @media (min-width: 360px) and (max-width: 640px) {
 
@@ -218,12 +270,117 @@ p {
     display: none;
   }
 
+
+
+  /* Стили реализации раскрывающегося меню через <details> */
+
+  details.mobile-menu {
+    display: block;
+    position: relative;
+
+    & summary {
+      list-style: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: blue;
+    }
+
+    & .mobile-menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    & .mobile-menu nav {
+      background: #444;
+      display: flex;
+      flex-direction: column;
+    }
+
+    & .mobile-menu nav a {
+      color: white;
+      text-decoration: none;
+      padding: 1rem;
+      border-top: 1px solid #555;
+    }
+
+  }
+
+
+  /* Стили реализации раскрывающегося меню через :has */
+
+  .menu-container {
+    display: block;
+    position: relative;
+
+    /* Кнопка включения меню */
+    & .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      color: black;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    & nav {
+      /* outline: 2px solid blue; */
+      padding: calc(var(--i) * 1);
+      overflow-y: scroll;
+      height: 0;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: height 0.6s ease, opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    & .nav-list {
+      /* outline: 2px solid red; */
+      display: grid;
+      background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+                  url(images/menu-bg.jpg);
+      background-position: center;
+      background-size: cover;
+      list-style-type: none;
+      border-radius: calc(var(--i) * 1);
+    }
+
+    & .nav-item {
+      /* outline: 1px dashed black; */
+      margin: calc(var(--i) * 0.5);
+      padding-bottom: calc(var(--i) * 0.2);
+      border-bottom: 1px solid #000077;
+    }
+
+    & .nav-item a {
+      color: #000077;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+      /* Показ меню, когда кнопка имеет класс .open (через :has) */
+    &:has(.menu-toggle.open) nav {
+      height: 70vh;
+      opacity: 1;
+      transform: translateY(0);
+    } 
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
 /* Для Смартфонов менее 360px не поддерживается: */
-
-@media (min-width: 1px) and (max-width: 359px) {
+@media (max-width: 359.9px) {
   body {
     background-color: red;
   }
@@ -232,6 +389,15 @@ p {
   }
   .page {
     display: none;
+  }
+  body::after {
+    width: 99vw;
+    margin-top: 10vh;
+    text-align: center;
+    font-size: 300%;
+    font-weight: bold;
+    content: "При размере экрана менее 360px сайт не работает";
+    color: gold
   }
 }
 
