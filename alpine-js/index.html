@@ -142,8 +142,11 @@
   </div>
 
 
+
   <!-- page - Остальная страница (без левого меню) -->
+
   <div class="page">
+
     <header class="page-header">
       <h1 class="page-title">alpine-js-examples</h1>
       <h3 class="page-subtitle">
@@ -154,73 +157,69 @@
     <main class="page-main">
 
       <!-- Секция 1 -->
-      <section class="content-section section-start">
+      <section class="content-section section-1" id="sect-1">
         <h3 class="content-section__header">
-            Начало
+            Подключение Alpine.JS
         </h3>
-        <article class="content-section__content">
-          <h2 x-data="{ message: 'Я ❤️ Alpine' }" x-text="message"></h1>
-        </article>
+        <table class="content-section__table">
+          <tr>
+            <th>Код</th>
+          </tr>
+          <tr>
+            <td>
+              <code>
+                &lt;script defer 
+                src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"&gt;
+                &lt;/script&gt;
+              </code>
+            </td>
+          </tr>
+        </table>
+        <p class="content-section__decription">
+          Вставляется в конце раздела <code>&lt;head&gt;</code>
+        </p>
       </section>
 
       <!-- Секция 2 -->
       <section class="content-section section-2" id="sect-2">
         <h3 class="content-section__header">
-            Заголовок 2
+            Начало
         </h3>
-        <article class="content-section__content">
-          <p>
-            Содержание 2
-          </p>
-        </article>
+        <table class="content-section__table">
+          <tr>
+            <th>Код</th>
+            <th>Образец</th>
+          </tr>
+          <tr>
+            <td>
+              &lt;h1 x-data=&quot;{ message: 'Я ❤️ Alpine' }&quot; x-text=&quot;message&quot;&gt;&lt;/h1&gt;
+            </td>
+            <td><h2 x-data="{ message: 'Я ❤️ Alpine' }" x-text="message"></h1></td>
+          </tr>
+        </table>
+        <p class="content-section__decription">
+          Описание
+        </p>
       </section>
 
-      <!-- Секция 2 -->
+      <!-- Секция 3 -->
       <section class="content-section section-3" id="sect-3">
         <h3 class="content-section__header">
-            Заголовок 23
+            Начало
         </h3>
-        <article class="content-section__content">
-          <p>
-            Содержание 3
-          </p>
-        </article>
-      </section>
-
-      <!-- Секция 4 -->
-      <section class="content-section section-4" id="sect-4">
-        <h3 class="content-section__header">
-            Заголовок 4
-        </h3>
-        <article class="content-section__content">
-          <p>
-            Содержание 4
-          </p>
-        </article>
-      </section>
-
-      <!-- Секция 5 -->
-      <section class="content-section section-5" id="sect-5">
-        <h3 class="content-section__header">
-            Заголовок 5
-        </h3>
-        <article class="content-section__content">
-          <p>
-            Содержание 5
-          </p>
-        </article>
-      </section>
-
-      <!-- Секция 6 -->
-      <section class="content-section section-6" id="sect-6">
-        <h3 class="content-section__header">
-            Заголовок 6
-        </h3>
-        <article class="content-section__content">
-          <p>
-            Содержание 6
-          </p>
-        </article>
+        <table class="content-section__table">
+          <tr>
+            <th>Код</th>
+            <th>Образец</th>
+          </tr>
+          <tr>
+            <td>...</td>
+            <td><h2 x-data="{ message: 'Я ❤️ Alpine' }" x-text="message"></h1></td>
+          </tr>
+        </table>
+        <p class="content-section__decription">
+          Описание
+        </p>
       </section>
 
     </main>
