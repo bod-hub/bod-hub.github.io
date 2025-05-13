@@ -1,4 +1,14 @@
-* {
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alpine-js-examples</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
+
+    <style>
+      * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -46,15 +56,14 @@ html, body {
 }
 
 body {
-  overflow-x: hidden;
   /* outline: 5px dotted red; */
   /* background-color: yellow; */
   font-family: Roboto;
   line-height: 1.4;
   /* padding: calc(var(--i) * 1); */
   display: grid;
-  grid-template-columns: 30vw 70vw;
-  /* grid-gap: calc(var(--i) * 0.5); */
+  grid-template-columns: 30% 70%;
+  grid-gap: calc(var(--i) * 0.5);
   align-content: start;
   justify-content: center;
   /* background-color: #cccccc; */
@@ -198,13 +207,7 @@ p {
 }
 
 .content-section {
-  /* outline: 2px dashed black; */
-  /* Ограничения максимальной ширины, если будут слишком широкие фрагменты кода */
-  max-width: 69vw;
-  /* Следующие два правила  заставляют принудительно переносить слова,
-  если они не помещаются по ширине */
-  word-break: break-all;
-  overflow-wrap: break-word;
+  /* outline: 2px dotted black; */
   padding: calc(var(--i) * 0.5);
   background-color: #efefff;
   border-radius: calc(var(--i) * 0.5);
@@ -215,11 +218,7 @@ p {
 }
 
 .content-section__article{
-  /* outline: 2px dotted blue; */
-  max-width: 66vw;
-  /* word-break: break-all;
-  overflow-wrap: break-word; */
-  overflow-x: auto;
+  /* outline: 2px dotted black; */
   padding: calc(var(--i) * 0.3);
 }
 
@@ -229,15 +228,11 @@ p {
 }
 
 .content-section-article__code {
-  /* outline: 2px dotted green; */
-  max-width: 65vw; 
-  /* word-break: break-all;
-  overflow-wrap: break-word; */
-  margin-bottom: calc(var(--i) * 1.5);
+  margin-bottom: calc(var(--i) * 1);
 }
 
 .content-section-article__example {
-  margin-bottom: calc(var(--i) * 2);
+
 }
 
 .content-section-article__decription {
@@ -324,22 +319,10 @@ th, td {
     display: none;
   }
 
-  .content-section {
-    max-width: 88vw;
-  }
-
-  .content-section__article{
-    max-width: 85vw;
-  }
-
-  .content-section-article__code {
-    max-width: 82vw; 
-  }
-
-
 
 
   /* Стили реализации раскрывающегося меню через <details> */
+
   details.mobile-menu {
     display: block;
     position: relative;
@@ -372,6 +355,7 @@ th, td {
 
 
   /* Стили реализации раскрывающегося меню через :has */
+
   .menu-container {
     display: block;
     position: relative;
@@ -436,6 +420,17 @@ th, td {
   }
 
 
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
@@ -472,3 +467,237 @@ th, td {
   padding: 5vmin;
   width: fit-content;
 }
+
+    </style>
+
+</head>
+
+<body>
+
+  <!-- Реализация раскрывающегося меню через :has  -->
+  <div class="menu-container">
+    <button class="menu-toggle" onclick="this.classList.toggle('open')">☰</button>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#sect-1">Пункт-01</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-2">Пункт-02</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-3">Пункт-03</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-4">Пункт-04</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-5">Пункт-05</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-6">Пункт-06</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-7">Пункт-07</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-8">Пункт-08</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-9">Пункт-09</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-10">Пункт-10</a>
+        </li>
+        <li class="nav-item">
+          <a href="#footer">Пункт-11</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <!-- Реализация раскрывающегося меню через <details>  -->
+  <!-- <details class="mobile-menu">
+    <summary>☰ Меню</summary>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#sect-1">Пункт-01</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-2">Пункт-02</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-3">Пункт-03</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-4">Пункт-04</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-5">Пункт-05</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-6">Пункт-06</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-7">Пункт-07</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-8">Пункт-08</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-9">Пункт-09</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-10">Пункт-10</a>
+        </li>
+        <li class="nav-item">
+          <a href="#footer">Пункт-11</a>
+        </li>
+      </ul>
+    </nav>
+  </details> -->
+
+
+  <!-- left-nav - Левое меню для Desktop -->
+  <div class="left-nav">
+    <div class="left-nav__logo">
+      <img src="images/alpine-logo.svg" alt="alpine-logo">
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#sect-1">Пункт-01</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-2">Пункт-02</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-3">Пункт-03</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-4">Пункт-04</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-5">Пункт-05</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-6">Пункт-06</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-7">Пункт-07</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-8">Пункт-08</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-9">Пункт-09</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sect-10">Пункт-10</a>
+        </li>
+        <li class="nav-item">
+          <a href="#footer">Пункт-11</a>
+        </li>
+      </ul>
+    </nav>
+  <!-- Конец left-nav -->
+  </div>
+
+
+
+  <!-- page - Остальная страница (без левого меню) -->
+
+  <div class="page">
+
+    <header class="page-header">
+      <h1 class="page-title">alpine-js-examples</h1>
+      <h3 class="page-subtitle">
+          Author: Bodryakov Alexey
+      </h3>
+    </header>
+
+    <main class="page-main">
+
+      <!-- Секция 1 -->
+      <section class="content-section section-1" id="sect-1">
+        <h3 class="content-section__header">
+            Подключение Alpine.JS
+        </h3>
+        <h5>Код</h5>
+          <code>
+            &lt;script defer 
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"&gt;
+            &lt;/script&gt;
+          </code>
+        <p class="content-section__decription">
+          Вставляется в конце раздела <code>&lt;head&gt;</code>
+        </p>
+      </section>
+
+      <!-- Секция 2 -->
+      <section class="content-section section-2" id="sect-2">
+        <h3 class="content-section__header">
+            Первый код на AlpibeJS и проверка работоспособности кода
+        </h3>
+        <article class="content-section__article">
+          <h5 class="content-section-article__header">Код:</h5>
+          <p class="content-section-article__code">
+            <code>
+              &lt;h2 x-data=&quot;{ message: 'Я ❤️ Alpine' }&quot; 
+              x-text=&quot;message&quot;&gt;&lt;/h2&gt;
+            </code>
+          </p>
+          <h5 class="content-section-article__header">Образец:</h5>
+          <div class="content-section-article__example">
+            <h2 x-data="{ message: 'Я ❤️ Alpine' }" x-text="message"></h2>
+          </div>
+          <p class="content-section-article__decription">
+            Вставляется в конце раздела <code>&lt;head&gt;</code>
+          </p>
+        </article>
+      </section>
+
+      <!-- Секция 3 -->
+      <section class="content-section section-3" id="sect-3">
+        <h3 class="content-section__header">
+            Первый код на AlpibeJS и проверка работоспособности кода
+        </h3>
+        <article class="content-section__article">
+          <h5 class="content-section-article__header">Код:</h5>
+          <p class="content-section-article__code">
+            <code>
+              &lt;h2 x-data=&quot;{ message: 'Я ❤️ Alpine' }&quot; 
+              x-text=&quot;message&quot;&gt;&lt;/h2&gt;
+            </code>
+          </p>
+          <h5 class="content-section-article__header">Образец:</h5>
+          <div class="content-section-article__example">
+            <h2 x-data="{ message: 'Я ❤️ Alpine' }" x-text="message"></h2>
+          </div>
+          <p class="content-section-article__decription">
+            Вставляется в конце раздела <code>&lt;head&gt;</code>
+          </p>
+        </article>
+      </section>
+      
+
+
+    </main>
+
+
+    <footer class="page-footer">
+      <p id="footer">
+        Футер
+      </p>
+      <a href="_typography.html">_typography.html</a>
+    </footer>
+
+
+  <!-- Конец page -->
+  </div>
+
+
+</body>
+</html>
