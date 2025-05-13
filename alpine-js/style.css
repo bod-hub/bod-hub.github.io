@@ -35,7 +35,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 17px;
   scroll-behavior: smooth;
 }
 
@@ -62,7 +62,7 @@ body {
 
 
 
-/* Стили общих элементов */
+/* Стили общих элементов (не макет) */
 
 h1 {
   font-size: 3rem;
@@ -77,10 +77,37 @@ h5 {
 }
 
 p {
-  /* font-size: calc(var(--i) * 1); */
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.content-section-article__example button {
+  min-width: 10rem;
+  min-height: 3rem;
+  font-size: 1rem;
+}
+
+.button-to-start {
+  width: 7rem;
+  height: 2rem;
+  font-size: 1.1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-section-article__example input {
+  min-width: 10rem;
+  min-height: 2rem;
+  font-size: 1rem;
 }
 
 
+
+/* Стили макета */
 
 .mobile-menu {
   display: none;
@@ -91,33 +118,44 @@ p {
 }
 
 
-
-
 /* Левое меню навигации */
 
-.left-nav {
+.left-bar {
   /* outline: 2px solid blue; */
   min-height: 100vh;
   padding: calc(var(--i) * 0.5);
   padding-left: calc(var(--i) * 1);
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-  url(images/menu-bg.png);
-  background-position: center;
-  background-size: cover;
+
 }
 
-.left-nav__logo {
+.left-bar__logo {
   /* outline: 2px solid red; */
   height: calc(var(--i) * 9);
   /* padding: calc(var(--i) * 1); */
 }
 
-.left-nav__logo img {
+.left-bar__logo img {
   max-width: 100%;
   height: auto;
   display: block;
   transform: translateY(calc(var(--i) * -4));
 }
+
+.left-bar__menu {
+  /* outline: 2px solid violet; */
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+  url(images/menu-bg-54.png);
+  background-position: center;
+  background-size: cover;
+
+}
+
+
+/* .bg-left-menu-container{
+  position: absolute;
+  z-index: -1;
+} */
+
 
 .nav-list {
   /* outline: 2px solid red; */
@@ -234,6 +272,7 @@ p {
   /* word-break: break-all;
   overflow-wrap: break-word; */
   margin-bottom: calc(var(--i) * 1.5);
+  font-size: 1.1rem;
 }
 
 .content-section-article__example {
@@ -241,10 +280,13 @@ p {
 }
 
 .content-section-article__decription {
-  /* margin: calc(var(--i) * 0.3); */
+  word-break: normal;   /* Перенос работает с одним этим свойством */
+  overflow-wrap: break-word;   /* Возможно не нужно */
+  white-space: normal;    /* Возможно не нужно */
+  text-align: justify;
 }
 
-table {
+/* table {
   border: 2px solid black;
   width: 100%;
   border-collapse: collapse;
@@ -253,7 +295,7 @@ table {
 th, td {
   border: 1px solid black;
   padding: 0.2vh 0.5vw;
-}
+} */
 
 
 /* Стили футера */
@@ -320,7 +362,7 @@ th, td {
     justify-content: center;
   }
 
-  .left-nav {
+  .left-bar {
     display: none;
   }
 
@@ -444,7 +486,7 @@ th, td {
   body {
     background-color: red;
   }
-  .left-nav {
+  .left-bar {
     display: none;
   }
   .page {
@@ -454,9 +496,9 @@ th, td {
     width: 99vw;
     margin-top: 10vh;
     text-align: center;
-    font-size: 300%;
+    font-size: 200%;
     font-weight: bold;
-    content: "При размере экрана менее 360px сайт не работает";
+    content: "При размере экрана менее 360px сайт не работает. Попробуйте горизонтальную ориентацию устройства";
     color: gold
   }
 }

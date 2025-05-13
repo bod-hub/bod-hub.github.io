@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>alpine-js-examples</title>
+    <title>Alpine.js - examples</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
 </head>
@@ -57,7 +57,7 @@
   <!-- <details class="mobile-menu">
     <summary>☰ Меню</summary>
     <nav>
-      <ul class="nav-list">
+      <ul class="nav-list" id="start">
         <li class="nav-item">
           <a href="#sect-1">Пункт-01</a>
         </li>
@@ -96,59 +96,62 @@
   </details> -->
 
 
-  <!-- left-nav - Левое меню для Desktop -->
-  <div class="left-nav">
-    <div class="left-nav__logo">
+  <!-- left-bar - Левая панель для Desktop, включая левое меню -->
+  <div class="left-bar">
+    <div class="left-bar__logo">
       <img src="images/alpine-logo.svg" alt="alpine-logo">
     </div>
-    <nav>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a href="#sect-1">Пункт-01</a>
-        </li>
-        <li class="nav-item">
-          <a href="#sect-2">Пункт-02</a>
-        </li>
-        <li class="nav-item">
-          <a href="#sect-3">Пункт-03</a>
-        </li>
-        <li class="nav-item">
-          <a href="#sect-4">Пункт-04</a>
-        </li>
-        <li class="nav-item">
-          <a href="#sect-5">Пункт-05</a>
-        </li>
-        <li class="nav-item">
-          <a href="#sect-6">Пункт-06</a>
-        </li>
-        <li class="nav-item">
-          <a href="#sect-7">Пункт-07</a>
-        </li>
-        <li class="nav-item">
-          <a href="#sect-8">Пункт-08</a>
-        </li>
-        <li class="nav-item">
-          <a href="#sect-9">Пункт-09</a>
-        </li>
-        <li class="nav-item">
-          <a href="#sect-10">Пункт-10</a>
-        </li>
-        <li class="nav-item">
-          <a href="#footer">Пункт-11</a>
-        </li>
-      </ul>
-    </nav>
-  <!-- Конец left-nav -->
+    <div class="left-bar__menu">
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#sect-1">Подключение Alpine.JS</a>
+          </li>
+          <li class="nav-item">
+            <a href="#sect-2">Первый код на Alpine.JS и проверка работоспособности кода</a>
+          </li>
+          <li class="nav-item">
+            <a href="#sect-3">Создание счётчика</a>
+          </li>
+          <li class="nav-item">
+            <a href="#sect-4">Создание спойлера</a>
+          </li>
+          <li class="nav-item">
+            <a href="#sect-5">Создание поля поиска</a>
+          </li>
+          <li class="nav-item">
+            <a href="#sect-6">Пункт-06</a>
+          </li>
+          <li class="nav-item">
+            <a href="#sect-7">Пункт-07</a>
+          </li>
+          <li class="nav-item">
+            <a href="#sect-8">Пункт-08</a>
+          </li>
+          <li class="nav-item">
+            <a href="#sect-9">Пункт-09</a>
+          </li>
+          <li class="nav-item">
+            <a href="#sect-10">Пункт-10</a>
+          </li>
+          <li class="nav-item">
+            <a href="#footer">Пункт-11</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  <!-- Конец left-bar -->
   </div>
 
 
 
   <!-- page - Остальная страница (без левого меню) -->
 
-  <div class="page">
+  <div class="page" id="start">
 
     <header class="page-header">
-      <h1 class="page-title">alpine-js-examples</h1>
+      <h1 class="page-title">Alpine.js - examples</h1>
       <h3 class="page-subtitle">
           Author: Bodryakov Alexey
       </h3>
@@ -158,7 +161,7 @@
     <main class="page-main">
 
       <!-- Секция 1 -->
-      <section class="content-section section-1" id="sect-1">
+      <section class="content-section" id="sect-1">
         <h3 class="content-section__header">
             Подключение Alpine.JS
         </h3>
@@ -180,8 +183,9 @@
         </article>
       </section>
 
+
       <!-- Секция 2 -->
-      <section class="content-section section-2" id="sect-2">
+      <section class="content-section" id="sect-2">
         <h3 class="content-section__header">
             Первый код на Alpine.JS и проверка работоспособности кода
         </h3>
@@ -204,53 +208,388 @@
         </article>
       </section>
 
+
       <!-- Секция 3 -->
-      <section class="content-section section-3" id="sect-3">
+      <section class="content-section" id="sect-3">
         <h3 class="content-section__header">
-            Секция 3
+            Создание счётчика
         </h3>
         <article class="content-section__article">
           <h5 class="content-section-article__header">Код:</h5>
           <p class="content-section-article__code">
             <code>
-              Секция 3
+              <pre>
+&lt;div x-data=&quot;{ count: 0 }&quot;&gt;
+  &lt;button x-on:click=&quot;count++&quot;&gt;
+    Увеличить счётчик
+    &lt;span x-text=&quot;count&quot;&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+              </pre>
             </code>
           </p>
           <h5 class="content-section-article__header">Образец:</h5>
           <div class="content-section-article__example">
-            Секция 3
+<div x-data="{ count: 0 }">
+  <button x-on:click="count++">
+    Увеличить счётчик
+    <span x-text="count"></span>
+  </button>
+</div>
           </div>
           <h5 class="content-section-article__header">Пояснение:</h5>
           <p class="content-section-article__decription">
-            Секция 3
+            Внутри x-data объявляется объект данных, который будет отслеживаться Alpine. Каждое свойство этого объекта будет доступно другим директивам внутри данного HTML-элемента. Кроме того, при изменении одного из этих свойств меняется и всё, что на него опирается. 
+            <br>
+            x-on — это директива, которую можно использовать для прослушивания любого события на элементе. В данном случае мы слушаем событие click. Когда происходит событие click, Alpine вызывает связанное с ним JavaScript-выражение, в нашем случае count++. Часто вместо x-on: можно встретить использование @. 
+            <br>
+            x-text — это директива Alpine, которую вы можете использовать для установки текстового содержимого элемента в результат выражения JavaScript. В данном случае мы указываем Alpine на то, что содержимое тега span всегда должно отражать значение свойства count.
           </p>
         </article>
       </section>
+
+      <a href="#start">
+        <button class="button-to-start">
+          В начало &#x1F851;
+        </button>
+      </a>
+
 
       <!-- Секция 4 -->
-      <section class="content-section section-4" id="sect-4">
+      <section class="content-section" id="sect-4">
         <h3 class="content-section__header">
-            Секция 4
+            Создание спойлера
         </h3>
         <article class="content-section__article">
           <h5 class="content-section-article__header">Код:</h5>
           <p class="content-section-article__code">
             <code>
-              Секция 4
+
+              <pre>
+&lt;div x-data=&quot;{ open: false }&quot;&gt;
+  &lt;button @click=&quot;open = !open&quot;&gt;Переключить&lt;/button&gt;
+  &lt;div x-show=&quot;open&quot; @click.outside=&quot;open = false&quot;&gt;Содержимое...&lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+
             </code>
           </p>
           <h5 class="content-section-article__header">Образец:</h5>
           <div class="content-section-article__example">
-            Секция 4
+
+<div x-data="{ open: false }">
+  <button @click="open = !open">Переключить</button>
+  <div x-show="open" @click.outside="open = false">Содержимое...</div>
+</div>
+
           </div>
           <h5 class="content-section-article__header">Пояснение:</h5>
           <p class="content-section-article__decription">
-            Секция 4
+
+Если вы загрузите этот компонент, вы увидите, что «Содержимое…» по умолчанию скрыто. Для отображения скрытого содержимого нужно нажать кнопку «Переключить».
+<br>
+Директивы x-data и x-on должны быть знакомы вам по предыдущему примеру, поэтому мы опустим эти пояснения. 
+<br>
+x-show — чрезвычайно мощная директива в Alpine, которую можно использовать для отображения и скрытия блока HTML на странице на основе результата выражения JavaScript, в нашем случае: open.
+<br>
+В этом примере есть кое-что новое — модификатор .outside. В Alpine многие директивы поддерживают «модификаторы», которые добавляются через точку в конце директивы.
+В данном случае .outside указывает Alpine реагировать не на клики внутри <div>, а только если клик произошел снаружи элемента.
+
           </p>
         </article>
       </section>
 
+      <a href="#start">
+        <button class="button-to-start">
+          В начало &#x1F851;
+        </button>
+      </a>
 
+
+      <!-- Секция 5 -->
+      <section class="content-section" id="sect-5">
+        <h3 class="content-section__header">
+            Создание поля поиска
+        </h3>
+        <article class="content-section__article">
+          <h5 class="content-section-article__header">Код:</h5>
+          <p class="content-section-article__code">
+            <code>
+
+              <pre>
+&lt;div
+  x-data=&quot;{
+        search: '',
+        items: ['foo', 'bar', 'baz'],
+        get filteredItems() {
+            return this.items.filter(
+                i =&gt; i.startsWith(this.search)
+            )
+        }
+    }&quot;
+&gt;
+  &lt;input x-model=&quot;search&quot; placeholder=&quot;Поиск...&quot;&gt;
+  &lt;ul&gt;
+    &lt;template x-for=&quot;item in filteredItems&quot; :key=&quot;item&quot;&gt;
+      &lt;li x-text=&quot;item&quot;&gt;&lt;/li&gt;
+    &lt;/template&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+              </pre>
+
+            </code>
+          </p>
+          <h5 class="content-section-article__header">Образец:</h5>
+          <div class="content-section-article__example">
+
+<div
+  x-data="{
+        search: '',
+        items: ['foo', 'bar', 'baz'],
+        get filteredItems() {
+            return this.items.filter(
+                i => i.startsWith(this.search)
+            )
+        }
+    }"
+>
+  <input x-model="search" placeholder="Поиск...">
+  <ul>
+    <template x-for="item in filteredItems" :key="item">
+      <li x-text="item"></li>
+    </template>
+  </ul>
+</div>
+
+          </div>
+          <h5 class="content-section-article__header">Пояснение:</h5>
+          <p class="content-section-article__decription">
+
+По умолчанию все «элементы» (foo, bar и baz) будут отображаться на странице, но вы можете отфильтровать их, введя текст в поле ввода. По мере ввода список элементов будет меняться в зависимости от того, что вы ищете.
+<br>
+x-model используется для «привязки» значения входного элемента к свойству данных: в нашем случае «search» из x-data="{ search: '', ... }". Это означает, что каждый раз, когда значение ввода изменяется, значение «поиск» будет меняться, чтобы отразить это.
+<br>
+В свойстве items мы устанавливаем значение items в массив JavaScript, состоящий из 3 различных элементов (foo, bar и baz).
+<br>
+filteredItems является «getter»-свойством в этом объекте. Это означает, что мы можем получить доступ к фильтруемым элементам, как если бы это было обычное свойство нашего объекта данных, но когда мы это сделаем, JavaScript выполнит запуск предоставленной функции и вернёт результат.
+<br>
+Вполне приемлемо отказаться от get и просто сделать его методом, который можно вызывать из шаблона, но некоторые предпочитают более удобный синтаксис геттера.
+<br>
+Теперь заглянем в геттер filteredItems. Сначала мы получаем массив элементов (foo, bar и baz) и фильтруем их, используя предоставленный обратный вызов: i => i.startsWith(this.search).
+<br>
+Передавая этот обратный вызов в filter, мы говорим JavaScript, чтобы он возвращал только те элементы, которые начинаются со строки: this.search, которая, как мы видели с x-model, всегда будет отражать значение поля ввода.
+<br>
+Вы можете заметить, что до сих пор нам не приходилось использовать this для ссылки на свойства. Однако, поскольку мы работаем непосредственно внутри объекта x-data, мы должны ссылаться на любые свойства, используя this.[property] вместо [property].
+<br>
+Потому что Alpine — это «реактивный» фреймворк. При каждом изменении значения this.search части шаблона, использующие filteredItems, будут автоматически обновляться.
+<br>
+Теперь, когда мы разобрались с внутренней частью нашего компонента, давайте поймем, что происходит в шаблоне, который позволяет нам перебирать filteredItems на странице.
+<br>
+Выражения x-for имеют следующий вид: [item] in [items], где [items] — произвольный массив данных, а [item] — имя переменной, которой будет присвоена итерация внутри цикла.
+<br>
+Также обратите внимание, что x-for объявляется на элементе &lt;template&gt;, а не непосредственно на &lt;li&gt;. Это является обязательным условием использования x-for. Это позволяет Alpine использовать существующее поведение тегов &lt;template&gt; в браузере в своих интересах.
+
+Теперь любой элемент внутри тега &lt;template&gt; будет повторяться для каждого элемента внутри filteredItems, а все выражения, вычисляемые внутри цикла, будут иметь прямой доступ к итерационной переменной (в данном случае item).
+
+          </p>
+        </article>
+      </section>
+
+      <a href="#start">
+        <button class="button-to-start">
+          В начало &#x1F851;
+        </button>
+      </a>
+
+
+      <!-- Секция 6 -->
+      <section class="content-section" id="sect-6">
+        <h3 class="content-section__header">
+            ...
+        </h3>
+        <article class="content-section__article">
+          <h5 class="content-section-article__header">Код:</h5>
+          <p class="content-section-article__code">
+            <code>
+
+              <pre>
+...
+              </pre>
+
+            </code>
+          </p>
+          <h5 class="content-section-article__header">Образец:</h5>
+          <div class="content-section-article__example">
+
+...
+
+          </div>
+          <h5 class="content-section-article__header">Пояснение:</h5>
+          <p class="content-section-article__decription">
+
+...
+
+          </p>
+        </article>
+      </section>
+
+      <a href="#start">
+        <button class="button-to-start">
+          В начало &#x1F851;
+        </button>
+      </a>
+
+
+      <!-- Секция 7 -->
+      <section class="content-section" id="sect-7">
+        <h3 class="content-section__header">
+            ...
+        </h3>
+        <article class="content-section__article">
+          <h5 class="content-section-article__header">Код:</h5>
+          <p class="content-section-article__code">
+            <code>
+
+              <pre>
+...
+              </pre>
+
+            </code>
+          </p>
+          <h5 class="content-section-article__header">Образец:</h5>
+          <div class="content-section-article__example">
+
+...
+
+          </div>
+          <h5 class="content-section-article__header">Пояснение:</h5>
+          <p class="content-section-article__decription">
+
+...
+
+          </p>
+        </article>
+      </section>
+
+      <a href="#start">
+        <button class="button-to-start">
+          В начало &#x1F851;
+        </button>
+      </a>
+
+
+      <!-- Секция 8 -->
+      <section class="content-section" id="sect-8">
+        <h3 class="content-section__header">
+            ...
+        </h3>
+        <article class="content-section__article">
+          <h5 class="content-section-article__header">Код:</h5>
+          <p class="content-section-article__code">
+            <code>
+
+              <pre>
+...
+              </pre>
+
+            </code>
+          </p>
+          <h5 class="content-section-article__header">Образец:</h5>
+          <div class="content-section-article__example">
+
+...
+
+          </div>
+          <h5 class="content-section-article__header">Пояснение:</h5>
+          <p class="content-section-article__decription">
+
+...
+
+          </p>
+        </article>
+      </section>
+
+      <a href="#start">
+        <button class="button-to-start">
+          В начало &#x1F851;
+        </button>
+      </a>
+
+
+      <!-- Секция 9 -->
+      <section class="content-section" id="sect-9">
+        <h3 class="content-section__header">
+            ...
+        </h3>
+        <article class="content-section__article">
+          <h5 class="content-section-article__header">Код:</h5>
+          <p class="content-section-article__code">
+            <code>
+
+              <pre>
+...
+              </pre>
+
+            </code>
+          </p>
+          <h5 class="content-section-article__header">Образец:</h5>
+          <div class="content-section-article__example">
+
+...
+
+          </div>
+          <h5 class="content-section-article__header">Пояснение:</h5>
+          <p class="content-section-article__decription">
+
+...
+
+          </p>
+        </article>
+      </section>
+
+      <a href="#start">
+        <button class="button-to-start">
+          В начало &#x1F851;
+        </button>
+      </a>
+
+
+      <!-- Секция 10 -->
+      <section class="content-section" id="sect-10">
+        <h3 class="content-section__header">
+            ...
+        </h3>
+        <article class="content-section__article">
+          <h5 class="content-section-article__header">Код:</h5>
+          <p class="content-section-article__code">
+            <code>
+
+              <pre>
+...
+              </pre>
+
+            </code>
+          </p>
+          <h5 class="content-section-article__header">Образец:</h5>
+          <div class="content-section-article__example">
+
+...
+
+          </div>
+          <h5 class="content-section-article__header">Пояснение:</h5>
+          <p class="content-section-article__decription">
+
+...
+
+          </p>
+        </article>
+      </section>
+
+      <a href="#start">
+        <button class="button-to-start">
+          В начало &#x1F851;
+        </button>
+      </a>
 
 
     </main>
